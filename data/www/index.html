@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>DiceWars</title>
+	<script type="text/javascript" src="js/dicewars.js"></script>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden
+		}
+
+		svg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%
+		}
+
+		.centering {
+			position: absolute;
+			width: 100%;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		.title {
+			font-size: 5em;
+			text-align: center;
+			font-family: Georgia, serif;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="content">
+		<div class="centering title">Waiting for game to start...</div>
+	</div>
+	<script>webSocketStart();</script>
+</body>
+
+</html>

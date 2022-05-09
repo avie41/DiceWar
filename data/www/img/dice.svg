@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<g id="shadowrect" style="transform: translate(0px,10px);">
+	<rect width="1" height="20"  fill="black" fill-opacity="0.3" />
+</g>
+<g id="shadowarrow" style="transform: translate(0px,10px);">
+	<path d="M0 0 L 0 20 C 2 20, 2 20, 4 18 L 8 14 C 12 10, 12 10, 8 6 L 4 2 C 2 0, 2 0, 0 0"  fill="black" fill-opacity="0.3" style="stroke-linejoin:round;" />
+</g>
+<g id="d1">
+	<circle cx="15" cy="15" r="2" stroke="black" stroke-width="3" fill="black" />
+</g>
+<g id="d2">
+	<circle cx="8" cy="8" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="22" cy="22" r="2" stroke="black" stroke-width="3" fill="black" />
+</g>
+<g id="d3">
+	<circle cx="15" cy="15" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="7" cy="7" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="23" cy="23" r="2" stroke="black" stroke-width="3" fill="black" />
+</g>
+<g id="d4">
+	<circle cx="8" cy="8" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="22" cy="8" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="22" cy="22" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="8" cy="22" r="2" stroke="black" stroke-width="3" fill="black" />
+</g>
+<g id="d5">
+	<circle cx="15" cy="15" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="7" cy="7" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="23" cy="7" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="23" cy="23" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="7" cy="23" r="2" stroke="black" stroke-width="3" fill="black" />
+</g>
+<g id="d6">
+	<circle cx="8" cy="7" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="8" cy="15" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="8" cy="23" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="22" cy="7" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="22" cy="15" r="2" stroke="black" stroke-width="3" fill="black" />
+	<circle cx="22" cy="23" r="2" stroke="black" stroke-width="3" fill="black" />
+</g>
+<g id="square">
+	<rect width="30" height="30"  rx="1" ry="1" stroke="black" stroke-width="1" />
+	<rect width="30" height="30"  rx="1" ry="1" fill="black" fill-opacity="0.2" />
+</g>
+<g id="dicef1">
+	<use href="#square" />
+	<use href="#d1" />
+</g>
+<g id="dicef2">
+	<use href="#square" />
+	<use href="#d2" />
+</g>
+<g id="dicef3">
+	<use href="#square" />
+	<use href="#d3" />
+</g>
+<g id="dicef4">
+	<use href="#square" />
+	<use href="#d4" />
+</g>
+<g id="dicef5">
+	<use href="#square" />
+	<use href="#d5" />
+</g>
+<g id="dicef6">
+	<use href="#square" />
+	<use href="#d6" />
+</g>
+<g id="dice">
+	<g transform="scale(0.75,1) skewY(-15)">
+		<rect width="30" height="30"  rx="1" ry="1" stroke="black" stroke-width="1" />
+		<rect width="30" height="30"  rx="1" ry="1" fill="black" fill-opacity="0.6" />
+		<use href="#d3" />
+	</g>
+	<g transform="scale(-0.75,1) skewY(-15)">
+		<rect width="30" height="30"  rx="1" ry="1" stroke="black" stroke-width="1" />
+		<rect width="30" height="30"  rx="1" ry="1" fill="black" fill-opacity="0.2" />
+		<use href="#d5" />
+	</g>
+	<g transform="translate(0,-16.1) scale(1.06,0.38) rotate(45)">
+		<rect width="30" height="30"  rx="1" ry="1" stroke="black" stroke-width="1" />
+		<rect width="30" height="30"  rx="1" ry="1" fill="black" fill-opacity="0.0" />
+		<use href="#d6" />
+	</g>
+</g>
+<g id="dice4" transform="scale(0.4,0.4)"><g id="_dice4">
+	<g transform="scale(70,1)"><use href="#shadowrect" x="0" y="0" /></g>
+	<g transform="translate(70,0)"><use href="#shadowarrow" x="0" y="0" /></g>
+	<use href="#dice" x="0" y="0" />
+	<use href="#dice" x="0" y="-32" />
+	<use href="#dice" x="0" y="-64" />
+	<use href="#dice" x="0" y="-96" />
+</g></g>
+<g id="dice3" transform="scale(0.4,0.4)"><g id="_dice3">
+	<g transform="scale(55,1)"><use href="#shadowrect" x="0" y="0" /></g>
+	<g transform="translate(55,0)"><use href="#shadowarrow" x="0" y="0" /></g>
+	<use href="#dice" x="0" y="0" class="shadow3" />
+	<use href="#dice" x="0" y="-32" />
+	<use href="#dice" x="0" y="-64" />
+</g></g>
+<g id="dice2" transform="scale(0.4,0.4)"><g id="_dice2">
+	<g transform="scale(40,1)"><use href="#shadowrect" x="0" y="0" /></g>
+	<g transform="translate(40,0)"><use href="#shadowarrow" x="0" y="0" /></g>
+	<use href="#dice" x="0" y="0" class="shadow2" />
+	<use href="#dice" x="0" y="-32" />
+</g></g>
+<g id="dice1" transform="scale(0.4,0.4)"><g id="_dice1">
+	<g transform="scale(25,1)"><use href="#shadowrect" x="0" y="0" /></g>
+	<g transform="translate(25,0)"><use href="#shadowarrow" x="0" y="0" /></g>
+	<use href="#dice" x="0" y="0" class="shadow1" />
+</g></g>
+<g id="dice5" transform="scale(0.4,0.4)">
+	<use href="#_dice1" x="-15" y="-5" />
+	<use href="#_dice4" x="15" y="5" />
+</g>
+<g id="dice6" transform="scale(0.4,0.4)">
+	<use href="#_dice2" x="-15" y="-5" />
+	<use href="#_dice4" x="15" y="5" />
+</g>
+<g id="dice7" transform="scale(0.4,0.4)">
+	<use href="#_dice3" x="-15" y="-5" />
+	<use href="#_dice4" x="15" y="5" />
+</g>
+<g id="dice8" transform="scale(0.4,0.4)">
+	<use href="#_dice4" x="-15" y="-5" />
+	<use href="#_dice4" x="15" y="5" />
+</g>
+</defs>
+
+<use href="#dice5" x="100" y="200" fill="red" />
+<use href="#dice8" x="200" y="200" fill="red" />
+<use href="#dice2" x="300" y="200" fill="red" />
+
+<use href="#dice" x="300" y="300" fill="red" />
+
+</svg>

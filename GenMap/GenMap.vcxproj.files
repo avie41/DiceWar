@@ -1,0 +1,13 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\DefaultMap.cpp" />
+    <ClCompile Include="src\MapLoader.cpp" />
+    <ClCompile Include="src\StaticMapGenerator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Commun\IMapLib.h" />
+    <ClInclude Include="..\Commun\library.h" />
+    <ClInclude Include="src\DefaultMap.h" />
+    <ClInclude Include="src\MapLoader.h" />
+  </ItemGroup>
+</Project>

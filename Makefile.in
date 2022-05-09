@@ -1,0 +1,89 @@
+#####################################################
+# DO NOT EDIT!
+#
+
+ifdef debug
+	BINDIR := $(BINDIR)/debug
+	OBJDIR := $(OBJDIR)/debug
+	DEPDIR := $(DEPDIR)/debug
+	CXXFLAGS += -g
+	SUFFIX = _d
+else
+	BINDIR := $(BINDIR)/release
+	OBJDIR := $(OBJDIR)/release
+	DEPDIR := $(DEPDIR)/release
+	SUFFIX =
+endif
+
+BIN := $(BINDIR)/$(BINNAME)$(SUFFIX)$(if $(BINEXT),.$(BINEXT),)
+
+SRCS := $(wildcard $(SRCDIR)/*.c) $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)/*.cxx) $(wildcard $(SRCDIR)/*.cc)
+
+# object files, auto generated from source files
+OBJS := $(patsubst %,$(OBJDIR)/%.o,$(basename $(SRCS)))
+# dependency files, auto generated from source files
+DEPS := $(patsubst %,$(DEPDIR)/%.d,$(basename $(SRCS)))
+
+$(shell mkdir -p $(BINDIR) >/dev/null)
+$(shell mkdir -p $(dir $(OBJS)) >/dev/null)
+$(shell mkdir -p $(dir $(DEPS)) >/dev/null)
+
+# flags required for dependency generation; passed to compilers
+DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$*.d
+
+# compile C source files
+COMPILE.c = $(CC) $(DEPFLAGS) $(CFLAGS) $(CPPFLAGS) -c -o $@
+# compile C++ source files
+COMPILE.cc = $(CXX) $(DEPFLAGS) $(CXXFLAGS) $(CPPFLAGS) -c -o $@
+# link object files to binary
+LINK.o = $(LD) $(LDFLAGS) -o $@
+# precompile step
+PRECOMPILE =
+# postcompile step
+POSTCOMPILE =
+
+all: $(BIN)
+
+.PHONY: clean
+clean:
+	$(RM) -r $(OBJDIR) $(DEPDIR)
+
+.PHONY: distclean
+distclean: clean
+	$(RM) $(BIN)
+
+.PHONY: help
+help:
+	@echo available targets: all clean distclean
+
+$(BIN): $(OBJS)
+	$(LINK.o) $^ $(LDLIBS)
+
+$(OBJDIR)/%.o: %.c
+$(OBJDIR)/%.o: %.c $(DEPDIR)/%.d
+	$(PRECOMPILE)
+	$(COMPILE.c) $<
+	$(POSTCOMPILE)
+
+$(OBJDIR)/%.o: %.cpp
+$(OBJDIR)/%.o: %.cpp $(DEPDIR)/%.d
+	$(PRECOMPILE)
+	$(COMPILE.cc) $<
+	$(POSTCOMPILE)
+
+$(OBJDIR)/%.o: %.cc
+$(OBJDIR)/%.o: %.cc $(DEPDIR)/%.d
+	$(PRECOMPILE)
+	$(COMPILE.cc) $<
+	$(POSTCOMPILE)
+
+$(OBJDIR)/%.o: %.cxx
+$(OBJDIR)/%.o: %.cxx $(DEPDIR)/%.d
+	$(PRECOMPILE)
+	$(COMPILE.cc) $<
+	$(POSTCOMPILE)
+
+.PRECIOUS: $(DEPDIR)/%.d
+$(DEPDIR)/%.d: ;
+
+-include $(DEPS)

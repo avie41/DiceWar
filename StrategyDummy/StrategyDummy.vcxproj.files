@@ -1,0 +1,13 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Strategy.cpp" />
+    <ClCompile Include="src\StrategyDummy.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Commun\IStrategyLib.h" />
+    <ClInclude Include="..\Commun\library.h" />
+    <ClInclude Include="src\interface_lib.h" />
+    <ClInclude Include="src\StrategyDummy.h" />
+    <ClInclude Include="src\Strategy.h" />
+  </ItemGroup>
+</Project>
